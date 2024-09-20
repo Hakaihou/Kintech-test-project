@@ -1,0 +1,389 @@
+$background-card: #141419;
+$background-card-alt: #18181F;
+$background-main: #1B1C21;
+$background-img: #25272b;
+$transition-main: all 0.3s;
+$button-main: #FE9400;
+$button-active: #b25e00;
+$text-score: #979797;
+$text-alt: #535660;
+
+
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: $background-main;
+  font-weight: 500;
+  color: white;
+  font-size: 14px;
+}
+
+#root {
+  max-width: 295px;
+  margin: 150px auto 0 auto;
+
+  .popup-message {
+    position: absolute;
+    top: -48px;
+    left: -17px;
+    font-size: 10px;
+    width: 150px;
+    background: #424242;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+
+    .popup-corner {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      background: #424242;
+      transform: rotate(45deg);
+      top: 44px;
+      left: 16px;
+    }
+  }
+
+  main {
+
+    .stage-one, .stage-two, .stage-three, .stage-four {
+      border-radius: 4px;
+      background: $background-card-alt;
+    }
+
+    .promo-card {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 15px;
+      background: $background-card;
+      border-radius: 4px;
+
+      .flex-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+
+        &:nth-child(2) {
+          gap: 11.5px;
+        }
+
+        & img {
+          background: url("../img/red-bg.png");
+          max-width: 45px;
+          background-size: contain;
+        }
+
+        & h2 {
+          font-size: 18px;
+          margin: 0;
+          width: min-content;
+        }
+
+        .arrow {
+          padding: 5px 3.5px;
+          transition: $transition-main;
+          cursor: pointer;
+
+          & path {
+            transition: $transition-main;
+          }
+
+          &:hover {
+            & path {
+              fill: $button-main;
+              transition: $transition-main;
+            }
+          }
+        }
+
+        .rotate {
+          transform: rotate(180deg);
+          transition: $transition-main;
+        }
+      }
+    }
+
+    .promo-hidden {
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 0 0 4px 4px;
+
+      & p {
+        margin: 0;
+      }
+    }
+
+    .promo-enter {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .promo-enter-active {
+      max-height: 1000px; /* Большое значение, чтобы покрыть весь контент */
+      transition: max-height 300ms ease-out;
+    }
+
+    .promo-exit {
+      max-height: 1000px;
+      overflow: hidden;
+    }
+
+    .promo-exit-active {
+      max-height: 0;
+      transition: max-height 300ms ease-out;
+    }
+
+
+
+    .stage-two {
+      .promo-card {
+        border-radius: 4px 4px 0 0;
+        .img-container {
+          position: relative;
+          width: 45px;
+          height: 45px;
+          overflow: hidden;
+
+          & img:first-child {
+            position: relative;
+            z-index: 3;
+            background: initial;
+            top:0;
+            left: 0;
+          }
+
+          .red-bg {
+            position: absolute;
+            z-index:2;
+            top: 100%;
+            left: 0;
+            transition: 0.5s all;
+          }
+
+          .light-black-bg {
+            position: absolute;
+            z-index:1;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+
+      .promo-card-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 15px;
+
+        .footer-container {
+          display: flex;
+          justify-content: space-between;
+
+          .price {
+            color: $button-main;
+          }
+        }
+
+        & p {
+          margin: 0;
+        }
+      }
+
+      .promo-hidden {
+        background: $background-card;
+        flex-direction: column;
+        justify-content: left;
+        gap: 10px;
+
+        .flex-container {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          cursor: pointer;
+          transition: $transition-main;
+          user-select: none;
+          position: relative;
+          width: fit-content;
+
+          &:hover {
+            & span {
+              color: $button-main;
+              transition: $transition-main;
+            }
+          }
+
+          &:active {
+            & span {
+              color: $button-active;
+              transition: $transition-main;
+            }
+          }
+        }
+
+        .special-container {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          transition: $transition-main;
+          user-select: none;
+          position: relative;
+          width: fit-content;
+
+          .container {
+            display: flex;
+            gap: 9px;
+            cursor: pointer;
+
+            &:hover {
+              color: $button-main;
+              transition: $transition-main;
+            }
+
+            &:active {
+              color: $button-active;
+              transition: $transition-main;
+            }
+          }
+
+          .popup {
+            cursor: initial;
+          }
+
+          .popup-message {
+            top: -50px;
+            left: 91px;
+
+            .popup-corner {
+              width: 10px;
+              height: 10px;
+              top: 38px;
+              left: 19px;
+            }
+          }
+        }
+      }
+    }
+
+    .stage-three {
+      .promo-card-footer {
+        padding: 10px 15px;
+        gap: 3px;
+        font-size:13px;
+        font-weight:400;
+        & span {
+          color: $text-score;
+        }
+      }
+
+      .score-board {
+        padding: 10px 0 3px 0;
+        font-size:13px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: $background-card;
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: 15px 1fr 39px;
+          column-gap: 14px;
+          padding: 3px 15px 3px 16px;
+
+          .anon {
+            color: $text-score!important;
+          }
+
+          & p {
+            margin: 0;
+
+            &:first-child {
+              color: $text-score;
+            }
+
+            &:nth-child(2) {
+              color: $button-main;
+            }
+
+            &:nth-child(odd) {
+              text-align: right;
+            }
+          }
+
+          &:nth-child(odd) {
+            background: $background-card-alt;
+          }
+        }
+
+        .score-header {
+          margin-bottom: 4px;
+          background: $background-card!important;
+          padding: 0 15px;
+          & p {
+            color:$text-alt!important;
+          }
+        }
+      }
+    }
+
+    .stage-four {
+      .promo-card {
+        & img {
+          background: url("../img/red-bg.png")!important;
+          background-size: contain!important;
+        }
+      }
+
+      .promo-card-footer {
+        text-align: center;
+        padding: 15px;
+      }
+    }
+
+    .button-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+
+      & button {
+        font-family: "Roboto", sans-serif;
+        border-radius: 15px;
+        font-size: 12px;
+        padding: 10px;
+        background: $button-main;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: $transition-main;
+
+        &:hover {
+          background: #c47507;
+          transition: $transition-main;
+        }
+
+        &:active {
+          background: #704100;
+          transition: $transition-main;
+        }
+      }
+
+      & button:disabled {
+        background: grey;
+        cursor: initial;
+        color: black;
+        transition: $transition-main;
+      }
+    }
+
+  }
+}
+
