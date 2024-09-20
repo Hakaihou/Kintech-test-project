@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/Kintech-test-project/',
+        publicPath: '/',
     },
     mode: 'development',
     devServer: {
@@ -18,6 +18,9 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         open: true,
+    },
+    performance: {
+        hints: false // Отключает предупреждения о производительности
     },
     module: {
         rules: [

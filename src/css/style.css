@@ -253,6 +253,9 @@ body {
 #root main .stage-three .score-board .grid-container:nth-child(odd) {
   background: #18181F;
 }
+#root main .stage-three .score-board .spotlight {
+  background: rgba(214, 137, 42, 0.3411764706) !important;
+}
 #root main .stage-three .score-board .score-header {
   margin-bottom: 4px;
   background: #141419 !important;
