@@ -20,7 +20,7 @@ export default function MainContent() {
     const [isHidden4, setIsHidden4] = useState(true);
     const [popUp, setPopUp] = useState();
     const [popUp2, setPopUp2] = useState();
-    const [stage, setStage] = useState(3);
+    const [stage, setStage] = useState(0);
     const [fill, setFill] = useState(localStorage.getItem('fill') || 0);
     const [players, setPlayers] = useState(savedPlayers);
 
