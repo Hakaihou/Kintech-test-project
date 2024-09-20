@@ -288,7 +288,6 @@ body {
         font-weight: 400;
         display: flex;
         flex-direction: column;
-        gap: 6px;
         background: $background-card;
 
         .grid-container {
@@ -327,7 +326,7 @@ body {
         }
 
         .score-header {
-          margin-bottom: 4px;
+          margin-bottom: 7px;
           background: $background-card!important;
           padding: 0 15px;
           & p {
