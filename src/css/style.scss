@@ -120,28 +120,6 @@ body {
       }
     }
 
-    .promo-enter {
-      max-height: 0;
-      overflow: hidden;
-    }
-
-    .promo-enter-active {
-      max-height: 1000px; /* Большое значение, чтобы покрыть весь контент */
-      transition: max-height 300ms ease-out;
-    }
-
-    .promo-exit {
-      max-height: 1000px;
-      overflow: hidden;
-    }
-
-    .promo-exit-active {
-      max-height: 0;
-      transition: max-height 300ms ease-out;
-    }
-
-
-
     .stage-two {
       .promo-card {
         border-radius: 4px 4px 0 0;
